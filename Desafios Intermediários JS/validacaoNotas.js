@@ -55,61 +55,26 @@ o programa deve ser encerrado.
 //novo calculo (1-sim 2-nao)
 
 */
-const input = gets();
+let num = null;
+let sum = null;
+let nextStep = null;
 
-const cases = parseInt(input);
+const isValid = value => value >= 0 && value <= 10;
 
-const isValid = value => value <= 10 && value >= 0;
-
-let getout = false;
-
-let numA = null;
-let numB = null;
-
-while () {
-  const num = Number(lines.shift());""
-
-  if () {
-    console.log("nota invalida");
-    continue;
+do {
+  num = parseFloat(gets());
+  
+  isValid(num) ? sum += num : console.log("nota invalida");
+  
+  if (validScores.length === 2) {
+    const average = (validScores[0] + validScores[1]) / 2;
+    console.log(`media = ${average.toFixed(2)}`);
+    
+    validScores = [];
+    
+    do {
+      console.log("novo calculo (1-sim 2-nao)");
+      nextStep = parseInt(gets());
+    } while (nextStep < 1 || nextStep > 2)
   }
-
-  if (           ) {
-  
-
-  }
-
-  numB = num;
-
-  const average = (numA + numB) / 2;
-  
-  let validResponse = false;
-  
-  numA = null;
-  numB = null;
-  
-  console.log("media = " + average.toFixed(2));
-
-  let response = null;
-  
-  do {
-    console.log("novo calculo (1-sim 2-nao)");
-
-    response = lines.shift();
-
-    switch (response) {
-      case "1":
-        validResponse = true;
-        break;
-
-      case "2":
-        validResponse = true;
-        getout = true;
-        break;
-
-      default:
-        validResponse = false;
-        break;
-    }
-  } while (validResponse);
-}
+} while (nextStep != 2);
